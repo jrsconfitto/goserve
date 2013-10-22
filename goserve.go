@@ -20,7 +20,7 @@ func main() {
 	currentDirectory, err := os.Getwd()
 	if err == nil {
 		thePort := strings.TrimSpace(strconv.Itoa(*port))
-		fmt.Printf("Serving from http://localhost:%v", thePort)
+		fmt.Printf("Serving from http://localhost:%v\n", thePort)
 		http.ListenAndServe(":"+thePort, http.FileServer(http.Dir(currentDirectory)))
 	} else {
 		fmt.Println(err.Error())
